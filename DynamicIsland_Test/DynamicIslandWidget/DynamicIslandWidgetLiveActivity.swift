@@ -10,21 +10,31 @@ import WidgetKit
 import SwiftUI
 
 struct DynamicIslandWidgetAttributes: ActivityAttributes {
+    
+    public typealias OrderState = ContentState
+    
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
-        var value: Int
+        var nowState: String
+        var stateImage: String
     }
 
     // Fixed non-changing properties about your activity go here!
-    var name: String
+    var title: String
 }
 
 struct DynamicIslandWidgetLiveActivity: Widget {
+    
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: DynamicIslandWidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
-            VStack {
-                Text("Hello")
+            VStack(alignment: .center) {
+                Text(context.attributes.title)
+                
+                HStack(alignment: .center) {
+                    Image(systemName: context.state.stateImage)
+                    Text(context.state.nowState)
+                }
             }
             .activityBackgroundTint(Color.cyan)
             .activitySystemActionForegroundColor(Color.black)
@@ -34,23 +44,33 @@ struct DynamicIslandWidgetLiveActivity: Widget {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    Text("🍽")
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    Text("🧑🏼‍🍳")
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom")
-                    // more content
+                    VStack(alignment: .center) {
+                        Text(context.attributes.title)
+                        
+                        HStack(alignment: .center) {
+                            Image(systemName: context.state.stateImage)
+                            Text(context.state.nowState)
+                        }
+                    }
+                    .activityBackgroundTint(Color.cyan)
+                    .activitySystemActionForegroundColor(Color.black)
                 }
             } compactLeading: {
-                Text("L")
+                Text(context.state.nowState)
+                
             } compactTrailing: {
-                Text("T")
+                Image(systemName: context.state.stateImage)
+                
             } minimal: {
-                Text("Min")
+                Image(systemName: context.state.stateImage)
             }
-            .widgetURL(URL(string: "http://www.apple.com"))
+            .widgetURL(URL(string: "com.practice.DynamicIsland-Test"))
             .keylineTint(Color.red)
         }
     }
