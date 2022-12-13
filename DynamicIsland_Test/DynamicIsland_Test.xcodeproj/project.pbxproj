@@ -21,6 +21,7 @@
 		D2DEB2852947057500B8238A /* DynamicIslandWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D2DEB2802947057400B8238A /* DynamicIslandWidget.intentdefinition */; };
 		D2DEB2882947057500B8238A /* DynamicIslandWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D2DEB2732947057400B8238A /* DynamicIslandWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2DEB28D294705B800B8238A /* DynamicIslandWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DEB27C2947057400B8238A /* DynamicIslandWidgetLiveActivity.swift */; };
+		D2DEB28F2947142E00B8238A /* OrderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DEB28E2947142E00B8238A /* OrderState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		D2DEB2802947057400B8238A /* DynamicIslandWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DynamicIslandWidget.intentdefinition; sourceTree = "<group>"; };
 		D2DEB2812947057500B8238A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2DEB2832947057500B8238A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2DEB28E2947142E00B8238A /* OrderState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderState.swift; sourceTree = "<group>"; };
+		D2DEB2902947270B00B8238A /* DynamicIsland-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DynamicIsland-Test-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +109,10 @@
 		D2DEB2602947052500B8238A /* DynamicIsland_Test */ = {
 			isa = PBXGroup;
 			children = (
+				D2DEB2902947270B00B8238A /* DynamicIsland-Test-Info.plist */,
 				D2DEB2612947052500B8238A /* DynamicIsland_TestApp.swift */,
 				D2DEB2632947052500B8238A /* ContentView.swift */,
+				D2DEB28E2947142E00B8238A /* OrderState.swift */,
 				D2DEB2652947052600B8238A /* Assets.xcassets */,
 				D2DEB2672947052600B8238A /* Preview Content */,
 			);
@@ -247,6 +252,7 @@
 			files = (
 				D2DEB2642947052500B8238A /* ContentView.swift in Sources */,
 				D2DEB28D294705B800B8238A /* DynamicIslandWidgetLiveActivity.swift in Sources */,
+				D2DEB28F2947142E00B8238A /* OrderState.swift in Sources */,
 				D2DEB2852947057500B8238A /* DynamicIslandWidget.intentdefinition in Sources */,
 				D2DEB2622947052500B8238A /* DynamicIsland_TestApp.swift in Sources */,
 			);
@@ -400,6 +406,7 @@
 				DEVELOPMENT_TEAM = 22777777KX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DynamicIsland-Test-Info.plist";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -431,6 +438,7 @@
 				DEVELOPMENT_TEAM = 22777777KX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DynamicIsland-Test-Info.plist";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
