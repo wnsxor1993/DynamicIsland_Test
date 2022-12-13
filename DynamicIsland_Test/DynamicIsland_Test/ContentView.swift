@@ -37,10 +37,10 @@ struct ContentView: View {
         do {
             let orderActivity = try Activity<DynamicIslandWidgetAttributes>.request(attributes: widgetAttributes, contentState: orderStateAttributes, pushType: nil)
             
-            NSLog("Requested ordering Live Activity \(orderActivity.id)")
+            print("Requested ordering Live Activity \(orderActivity.id)")
             
         } catch(let error) {
-            NSLog("Error requesting pizza delivery Live Activity \(error.localizedDescription)")
+            print("Error requesting pizza delivery Live Activity \(error.localizedDescription)")
         }
     }
     
@@ -66,7 +66,7 @@ struct ContentView: View {
             for activity in Activity<DynamicIslandWidgetAttributes>.activities {
                 await activity.update(using: newOrderStateAttributes)
                 
-                NSLog("Requested a pizza delivery Live Activity \(orderState.orderString)")
+                print("Requested a pizza delivery Live Activity \(orderState.orderString)")
             }
         }
     }

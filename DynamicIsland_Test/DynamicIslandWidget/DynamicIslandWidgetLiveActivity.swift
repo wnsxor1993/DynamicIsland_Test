@@ -20,7 +20,7 @@ struct DynamicIslandWidgetAttributes: ActivityAttributes {
     }
 
     // Fixed non-changing properties about your activity go here!
-    var title: String
+    let title: String
 }
 
 struct DynamicIslandWidgetLiveActivity: Widget {
@@ -52,14 +52,16 @@ struct DynamicIslandWidgetLiveActivity: Widget {
                 DynamicIslandExpandedRegion(.bottom) {
                     VStack(alignment: .center) {
                         Text(context.attributes.title)
-                        
+                            .foregroundColor(.mint)
+
                         HStack(alignment: .center) {
                             Image(systemName: context.state.stateImage)
+                                .renderingMode(.template)
+                                .foregroundColor(.green)
                             Text(context.state.nowState)
+                                .foregroundColor(.cyan)
                         }
                     }
-                    .activityBackgroundTint(Color.cyan)
-                    .activitySystemActionForegroundColor(Color.black)
                 }
             } compactLeading: {
                 Text(context.state.nowState)
